@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Stack the Books</title>
+
+</head>
+<body>
+   <div class = "main" ng-controller="StartController">
+       {{heading}}
+       <div class = "form" ng-controller="SearchController">
+           <form>
+               <input type="text" ng-model="search" ng-change = "change()" name="findbook" placeholder="Title OR Author"/>
+                   <div class='button'>
+                   <input type="submit" name="Submit" ng-click="fetch()"/>
+                   </div>
+           </form>
+       </div>
+   </div>
+   <div class = "resultsSection" ng-controller="StartController">
+       {{resultsHeading}}
+       </div>
+
+    <!--- SCRIPTS GO HERE ----->
+    <script type="text/javascript" src="/vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/scripts/app.min.js"></script>
+</body>
+</html>
