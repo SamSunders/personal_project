@@ -3,26 +3,32 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Stack the Books</title>
-
+    <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/styles.css"/>
 </head>
 <body>
-   <div class = "main" ng-controller="StartController">
-       {{heading}}
-       <div class = "form" ng-controller="SearchController">
-           <form>
-               <input type="text" ng-model="search" ng-change = "change()" name="findbook" placeholder="Title OR Author"/>
-                   <div class='button'>
-                   <input type="submit" name="Submit" ng-click="fetch()"/>
-                   </div>
-           </form>
-       </div>
-   </div>
-   <div class = "resultsSection" ng-controller="StartController">
-       {{resultsHeading}}
-       </div>
+    <div class = "header">
+        <ul>
+            <li>
+                <h1>Welcome to Your Book Stack!</h1>
+            </li>
+            <li>
+                <a href ="#library">Library</a>
+            </li>
+            <li>
+                <a href ="#addbook">Add Book</a>
+            </li>
+        </ul>
+    </div>
+    <div class = "mainContent">
+        <main ng-view></main>
+    </div>
+
 
     <!--- SCRIPTS GO HERE ----->
     <script type="text/javascript" src="/vendors/angular/angular.min.js"></script>
+    <script type = "text/javascript" src = "/vendors/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="/scripts/app.min.js"></script>
+    <script type = "text/javascript" src = "/assets/scripts/controllers/controller.min.js"></script>
 </body>
 </html>
