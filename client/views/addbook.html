@@ -7,19 +7,16 @@
             </div>
         </form>
 
-            <div>
-                <div ng-repeat='newBook in allBookData' ng-click = "showFunction()">
-                    <ul>
-                        <li >Title: {{newBook.name}}</li>
-                        <li>Author: {{newBook.author}}</li>
-                        <li ng-show = showInfo>Publication Date: {{newBook.pubDate}}</li>
-                        <li ng-show = showInfo>Description: {{newBook.description}}</li>
-                        <li></li>
-                    </ul>
-                </div>
-            <div class = "extraInfo">
 
+                <div ng-repeat='newBook in allBookData' >
+                    <div ng-click = "showFunction()">
+                        <h4 >Title: {{newBook.name}}</h4>
+                        <h4>Author: {{newBook.author}}</h4>
+                </div>
+                <div class = "hiddenInfo" ng-show="showInfo">
+                    <h4> Publication Date: {{newBook.pubDate}}</h4>
+                    <h4>Description: {{newBook.description}}</h4>
+                </div>
             </div>
-        </div>
     </div>
 </div>
