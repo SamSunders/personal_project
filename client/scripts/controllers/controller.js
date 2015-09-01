@@ -19,6 +19,7 @@ myApp.controller("StartController", ['$scope', '$http', function($scope, $http){
                 if(response.status !== 200){
                     throw new Error('Failed to fetch cats from the API');
                 }
+
                 $scope.titleObject = {};
                 $scope.titleData = {};
                 $scope.newBook = {};
@@ -30,17 +31,38 @@ myApp.controller("StartController", ['$scope', '$http', function($scope, $http){
                     $scope.titleData.author = response.data.items[i].volumeInfo.authors;
                     $scope.titleData.pubDate = response.data.items[i].volumeInfo.publishedDate;
                     $scope.titleData.description = response.data.items[i].volumeInfo.description;
-                    $scope.newBook = {name: $scope.titleData.name, author: $scope.titleData.author, pubDate: $scope.titleData.pubDate, description: $scope.titleData.description};
+                    $scope.titleData.bookId = response.data.items[i].id;
+                    $scope.newBook = {name: $scope.titleData.name, author: $scope.titleData.author, pubDate: $scope.titleData.pubDate, description: $scope.titleData.description, bookId : $scope.titleData.id};
+                    $scope.isSelected = $scope.titleData.bookId;
+                    console.log("New Book" + $scope.titleData.bookId);
                     $scope.allBookData.push($scope.newBook);
                     console.log($scope.allBookData);
+                    console.log($scope.titleData.bookId);
+                    console.log($scope.allBookData.bookId + "Here");
+
 
                 }
                 //return $scope.allBookData;
             });
     };
     $scope.showInfo = false;
-    $scope.showFunction = function(){
+    $scope.showFunction = function(newBook){
+        console.log("Clicky Button");
+        $scope.selectedBook = newBook;
         $scope.showInfo = true;
+
+    };
+
+    $scope.setSelected = function(){
+        console.log("show" , arguments, this);
+        if($scope.isSelected = isSelected){
+            $scope.showInfo = true;
+            console.log("BOOYA THE ID!!!: " + $scope.titleData.id);
+        } else {
+            console.log("ID's don't match");
+            console.log("Show info: " + $scope.showInfo);
+            console.log("isSelected" + $scope.isSelected);
+        }
     };
 
 }]);

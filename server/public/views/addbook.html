@@ -9,7 +9,7 @@
 
 
                 <div ng-repeat='newBook in allBookData' >
-                    <div ng-click = "showFunction(newBook.name)">
+                    <div ng-click = "setSelected(allBookData.titleData.bookId)">
                         <h4 >Title: {{newBook.name}}</h4>
                         <h4>Author: {{newBook.author}}</h4>
                 </div>
