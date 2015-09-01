@@ -8,15 +8,18 @@
         </form>
 
 
-                <div ng-repeat='newBook in allBookData' >
-                    <div ng-click = "setSelected(allBookData.titleData.bookId)">
+                <div ng-repeat='newBook in allBookData' ng-click = "setSelected(newBook.bookId)" ng-class="{hiddenInfo: newBook.bookId === idSelectedBook}">
+                    <div ng-click = "setSelected(newBook.bookId)">
                         <h4 >Title: {{newBook.name}}</h4>
                         <h4>Author: {{newBook.author}}</h4>
+                        <h4>Id: {{newBook.bookId}}</h4>
                 </div>
-                <div class = "hiddenInfo" ng-show="showInfo">
+                <div class = "hiddenInfo">
                     <h4> Publication Date: {{newBook.pubDate}}</h4>
                     <h4>Description: {{newBook.description}}</h4>
+
                 </div>
             </div>
     </div>
 </div>
+

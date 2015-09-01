@@ -12,3 +12,18 @@ ul li {
 h1{
     margin-top: 0px;
 }
+
+.selected {
+    background-color: red;
+}
+
+.hiddenInfo {
+    background-color: red;
+    /*display: none;*/
+
+}
+
+.showInfo {
+    display: none;
+
+}
