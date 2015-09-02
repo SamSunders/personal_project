@@ -14,16 +14,31 @@ h1{
 }
 
 .selected {
-    background-color: red;
+    background-color: blue;
 }
 
 .hiddenInfo {
     background-color: red;
-    /*display: none;*/
+    display: block;
+}
+
+.alwaysShow {
+    display: block;
 
 }
 
-.showInfo {
+.hiddenFirst {
     display: none;
+}
 
+.shownInfo {
+    background-color: #5bc0de;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.trigger {
+    background-color: #003366;
+    padding: 5px;
+    color: white;
 }

@@ -7,19 +7,34 @@
             </div>
         </form>
 
+            <!--<div class = "shownInfo" ng-repeat="newBook in allBookData">-->
+                <!--<h4 >Title: {{newBook.name}}</h4>-->
+                <!--<h4>Author: {{newBook.author}}</h4>-->
+                <!--<button ng-click="toggleCustom()">Get More Info</button>-->
+                <!--<span ng-hide="custom"><h4>Description: {{newBook.description}}</h4></span>-->
+            <!--</div>-->
 
-                <div ng-repeat='newBook in allBookData' ng-click = "setSelected(newBook.bookId)" ng-class="{hiddenInfo: newBook.bookId === idSelectedBook}">
-                    <div ng-click = "setSelected(newBook.bookId)">
-                        <h4 >Title: {{newBook.name}}</h4>
-                        <h4>Author: {{newBook.author}}</h4>
-                        <h4>Id: {{newBook.bookId}}</h4>
-                </div>
-                <div class = "hiddenInfo">
-                    <h4> Publication Date: {{newBook.pubDate}}</h4>
-                    <h4>Description: {{newBook.description}}</h4>
-
-                </div>
+        <div class="shownInfo" ng-repeat='newBook in allBookData' >
+            <p>{{newBook.name}}</p>
+            <p>{{newBook.author}}</p>
+            <p class="p_table" ng-show="show">Description: </br>{{newBook.description}}</p>
+            <p class="p_table" ng-show="show">Publication Data: </br>{{newBook.pubDate}}</p>
+            <span class="trigger" ng-click="show=!show">Click</span>
             </div>
+
+        <!--<div class="alwaysShow" ng-repeat='newBook in allBookData' >-->
+            <!--<div ng-click = "setSelected(newBook.bookId)">-->
+                <!--<h4>Title: {{newBook.name}}</h4>-->
+                <!--<h4>Author: {{newBook.author}}</h4>-->
+                <!--<button ng-click="toggleCustom()">Get More Info</button>-->
+            <!--</div>-->
+                <!--&lt;!&ndash;<div ng-class="{hiddenInfo: newBook.bookId === idSelectedBook}" >&ndash;&gt;-->
+            <!--<div ng-class="hidden" >-->
+                <!--&lt;!&ndash;<span ng-hide="custom"> Publication Date: {{newBook.pubDate}}</span>&ndash;&gt;-->
+                <!--<span ng-hide="custom"> Publication Date: {{newBook.pubDate}}</span>-->
+                <!--<span ng-hide="custom">Description: {{newBook.description}}</span>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
 </div>
 

@@ -28,7 +28,7 @@ myApp.controller("StartController", ['$scope', '$http', function($scope, $http){
                 console.log(response.data);
                 for (var i = 0; i < response.data.items.length; i++) {
                     $scope.titleData.name = response.data.items[i].volumeInfo.title;
-                    $scope.titleData.author = response.data.items[i].volumeInfo.authors;
+                    $scope.titleData.author = response.data.items[i].volumeInfo.authors[0];
                     $scope.titleData.pubDate = response.data.items[i].volumeInfo.publishedDate;
                     $scope.titleData.description = response.data.items[i].volumeInfo.description;
                     $scope.titleData.bookId = response.data.items[i].id;
@@ -52,10 +52,12 @@ myApp.controller("StartController", ['$scope', '$http', function($scope, $http){
         $scope.showInfo = true;
 
     };
-
+    $scope.hidden = false;
     $scope.idSelectedBook = null;
-    $scope.setSelected = function (idSelectedBook) {
+    $scope.setSelected = function (idSelectedBook, hidden) {
         $scope.idSelectedBook = idSelectedBook;
+        $scope.hidden = hidden;
+        $scope.hidden = true;
     };
     //$scope.setSelected = function(isSelected){
     //    console.log("show" , arguments, this);
@@ -68,5 +70,11 @@ myApp.controller("StartController", ['$scope', '$http', function($scope, $http){
     //        console.log("isSelected" + $scope.isSelected);
     //    }
     //};
+    $scope.custom = true;
+    $scope.toggleCustom = function() {
+        $scope.custom = $scope.custom === false ? true: false;
+        console.log("Button Clicked");
+
+    };
 
 }]);
